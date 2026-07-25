@@ -52,19 +52,21 @@ html {
 
 .heading b {
     font-weight: 300;
+    font-size: 50px;
     color: var(--oxblood);
 }
 
 .heading .heading-part {
     font-weight: 200;
+    font-size: 30px;
     color: var(--oxblood);
     opacity: 0;
     transition: opacity 10s ease;
 }
 
-#h_be .heading-part {
+/* #h_be .heading-part {
     font-size: 28px;
-}
+} */
 
 .submenu {
     display: none;

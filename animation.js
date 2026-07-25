@@ -61,7 +61,7 @@ const BACH = [
         accidental: () => flat, scale: 0.08, offset_y: -22, offset_x: -23
     },
     { t: 120, id: "h_a", x: 0.3, y: 1 },
-    { t: 160, id: "h_complete", x: 0.6, y: 3 },
+    { t: 160, id: "h_complete", x: 0.7, y: 3 },
     {
         t: 200, id: "h_human", x: 0.9, y: 2,
         accidental: () => natural, scale: 0.03, offset_y: -15, offset_x: -20
