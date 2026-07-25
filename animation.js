@@ -7,11 +7,10 @@ const par = document.getElementById("canvas");
 const header = document.getElementById("header");
 const bach = document.getElementById("bach")
 const heading = document.getElementById("heading");
+let quotes = document.getElementsByClassName("quote");
 const W = par.offsetWidth;
 const H = par.offsetWidth;
-//const offsetY = par.getBoundingClientRect().top;
-const offsetY = bach.offsetHeight - 30 - H / 2;
-console.log(par.getBoundingClientRect().top);
+const offsetY = bach.offsetHeight * 0.7 - H / 2;
 const scale = W / 600 * 0.5;
 console.log("Canvas size:", W, H, "Scale: ", scale);
 
@@ -51,19 +50,20 @@ function setup() {
 }
 
 const initial_radius = 60;
-let t = -100, x = 0, y = 0, spiral_x, spiral_y, radius = initial_radius, angle = Math.PI / 2;
+const dot_appearance = 300;
+let t = -dot_appearance, x = 0, y = 0, spiral_x, spiral_y, radius = initial_radius, angle = Math.PI / 2;
 
 const PHI = (1 + Math.sqrt(5)) / 2;
 
 const BACH = [
     {
-        angle: Math.PI * 5.12, t: 80, id: "h_be", x: 0.18, y: 2,
+        angle: Math.PI * 5.12, t: 80, id: "h_be", x: 0.18, y: 2, area_id: "area_be",
         accidental: () => flat, scale: 0.16, offset_y: -44, offset_x: -46
     },
-    { angle: Math.PI * 3.19, t: 120, id: "h_a", x: 0.37, y: 1 },
-    { angle: Math.PI * 3.85, t: 160, id: "h_complete", x: 0.63, y: 3 },
+    { angle: Math.PI * 3.19, t: 120, id: "h_a", x: 0.37, y: 1, area_id: "area_a", }, 
+    { angle: Math.PI * 3.85, t: 160, id: "h_complete", x: 0.63, y: 3, area_id: "area_complete" },
     {
-        angle: Math.PI * 5.932, t: 200, id: "h_human", x: 0.82, y: 2,
+        angle: Math.PI * 5.932, t: 200, id: "h_human", x: 0.82, y: 2, area_id: "area_human",
         accidental: () => natural, scale: 0.06, offset_y: -30, offset_x: -40
     },
 ]
@@ -75,22 +75,14 @@ const clef_dx = violin_clef_points[violin_clef_points.length - 20].x - violin_cl
 const clef_dy = violin_clef_points[violin_clef_points.length - 20].y - violin_clef_points[0].y;
 
 function fadeout(layer, d_alpha) {
-    // layer.loadPixels();
-
-    // for (let i = 3; i < layer.pixels.length; i += 4) {
-    //     layer.pixels[i] = max(0, layer.pixels[i] - d_alpha);
-    // }
-
-    // layer.updatePixels();
-
     layer.push();
     layer.resetMatrix();
 
-layer.erase(d_alpha);   // amount to erase
-layer.rect(0, 0, layer.width, layer.height);
+    layer.erase(d_alpha);   // amount to erase
+    layer.rect(0, 0, layer.width, layer.height);
 
-layer.noErase();
-layer.pop();
+    layer.noErase();
+    layer.pop();
 }
 
 function draw() {
@@ -102,7 +94,7 @@ function draw() {
     })
     planet_layer.clear();
     if (t <= 0) {
-        const progress = (t + 100) / 100;
+        const progress = (t + dot_appearance) / dot_appearance;
         planet_layer.fill(72, 0, 0, progress * 255);
         planet_layer.noStroke();
         planet_layer.ellipse(0, 0, 18 * progress, 12 * progress, Math.PI);
@@ -115,9 +107,12 @@ function draw() {
             main_layer.line(x, y, x + dx, y + dy);
             x += dx; y += dy;
         }
-        planet_layer.fill(72, 0, 0, 255);
-        planet_layer.noStroke();
-        planet_layer.ellipse(x, y, 18, 12, Math.PI);
+
+        if (t < violin_clef_points.length - 20) {
+            planet_layer.fill(72, 0, 0, 255);
+            planet_layer.noStroke();
+            planet_layer.ellipse(x, y, 18, 12, Math.PI);
+        }
     }
     if (t >= violin_clef_points.length - 20 && angle <= Math.PI * 4.5) {
         const prev_x = radius * Math.cos(angle) + clef_dx;
@@ -157,6 +152,7 @@ function draw() {
                 if (part) {
                     part.style.opacity = 0.65;
                 }
+                show(item.area_id);
                 item.painted = true;
             }
         })
@@ -170,7 +166,7 @@ function draw() {
     }
     t += step;
 
-    if (t <= 500) {
+    if (t > 0 && t <= 500) {
         line_layer.strokeWeight(1.5);
         line_layer.stroke(150, 150, 150, 2);
         for (let j = -3; j < 2; j++) {
@@ -181,6 +177,12 @@ function draw() {
     [main_layer, planet_layer, spiral_layer, line_layer].forEach((layer) => {
         layer.pop();
     })
+
+    if (t > violin_clef_points.length) {
+        quotes.forEach(quote => quote.style.opacity = 1); quotes = [];
+        show("areas-intro");
+        show('area_fundament');
+    }
 }
 
 function show(id, opacity = 1) {
