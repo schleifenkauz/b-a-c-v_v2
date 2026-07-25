@@ -75,6 +75,11 @@ html {
 
 .dropdown:hover .submenu {
     display: block;
+    margin-top: 5px;
+}
+
+.submenu:hover {
+    display: block;
 }
 
 body {
