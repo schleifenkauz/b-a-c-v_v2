@@ -11,11 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
 
-    <header>
+    <header id="header">
         <div class="wrap">
             <div class="topbar">
                 <div class="brand">
@@ -35,6 +36,7 @@
                                 <li><a href="#wegweiser4">Für Manager</a></li>
                             </ul>
                         </div>
+                        <a href="vita">Vita</a>
                         <a href="#kontakt">Kontakt</a>
                     </nav>
                     <button class="sound" id="soundBtn" aria-pressed="false"
@@ -49,8 +51,8 @@
     <main>
 
         <div class="wrap">
-            <div class="bach">
-                <div class="heading">
+            <div id="bach">
+                <div id="heading">
                     <div id="h_be">
                         <b>B</b><text class="heading-part">e</text>
                     </div>
@@ -64,15 +66,15 @@
                         <b>H</b><text class="heading-part">uman</text>
                     </div>
                 </div>
-
                 <div id="canvas"></div>
             </div>
-            <div style="text-align: center; ">
-                <text>
-                Professionally Decoded Music - 
+
+            <div id="title-container">
+                <text id="title">
+                    Professionally Decoded Music - <text class="matrix-a">A</text> key to understanding the matrix of
+                    life.
                 </text>
-                <text>
-                as A key to understanding the matrix of life.
+                <text id="subtitle">
                 </text>
             </div>
         </div>
@@ -81,7 +83,7 @@
         <section class="creed">
             <div class="wrap">
                 <p class="big">
-                    "Give me <text style="color: var(--oxblood)">A</text> lever long enough and a solid point, and I
+                    "Give me <text class="matrix-a">A</text> lever long enough and a solid point, and I
                     will move the world."
                 </p>
 
@@ -90,7 +92,7 @@
                      "No art affects man as directly and as deeply as music, precisely because none lets us recognize the true essence of the world so deeply and directly."
                 </p>  -->
 
-<!--                 <p class="big">Musik ist <text style="color: var(--oxblood)">A</text> <b>Schlüssel</b> — das Fundament, von dem aus sich jede Frage aufschließt.
+                <!--                 <p class="big">Musik ist <text style="color: var(--oxblood)">A</text> <b>Schlüssel</b> — das Fundament, von dem aus sich jede Frage aufschließt.
                 </p>
  --><!--                 <div>
                     <p>Nicht Musik, erklärt durch anderes — sondern alles andere, <em>aufgeschlossen durch Musik</em>.
@@ -104,7 +106,7 @@
             <p class="intro mono">Fünf Bereiche — ein Fundament, vier Ableitungen</p>
 
             <a class="area" href="#">
-                <span class="glyph small">C·S</span>
+                <img src="res/temple.png" width="48px">
                 <div>
                     <h3>Fundament</h3>
                     <span class="who mono">Der feste Punkt — C · S, die kleine Terz C–Es</span>
@@ -121,7 +123,7 @@
             </a>
 
             <a class="area" href="#">
-                <span class="glyph">B</span>
+                <span><text class="glyph">B</text><text class="text-rest">e</text></span>
                 <div>
                     <h3>Lebensschule</h3>
                     <span class="who mono">Schule · Coaching · Musikergesundheit</span>
@@ -137,8 +139,6 @@
                     </div>
                 </div>
             </a>
-
-
 
             <a class="area" href="#">
                 <span class="glyph">A</span>
@@ -159,7 +159,8 @@
             </a>
 
             <a class="area" href="#">
-                <span class="glyph">C</span>
+                <span><text class="glyph">C</text><text class="text-rest">omplete</text></span>
+
                 <div>
                     <h3>Instrumentalpädagogik</h3>
                     <span class="who mono">Für Eltern &amp; Schülerinnen und Schüler</span>
@@ -176,7 +177,8 @@
             </a>
 
             <a class="area" href="#">
-                <span class="glyph">H</span>
+                <span><text class="glyph">H</text><text class="text-rest">uman</text></span>
+                
                 <div>
                     <h3>Podium</h3>
                     <span class="who mono">Für Veranstalter</span>
