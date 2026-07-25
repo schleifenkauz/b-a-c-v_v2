@@ -57,13 +57,13 @@ const PHI = (1 + Math.sqrt(5)) / 2;
 
 const BACH = [
     {
-        t: 80, id: "h_be", x: 0.15, y: 2,
+        t: 80, id: "h_be", x: 0.18, y: 2,
         accidental: () => flat, scale: 0.08, offset_y: -22, offset_x: -23
     },
-    { t: 120, id: "h_a", x: 0.4, y: 1 },
-    { t: 160, id: "h_complete", x: 0.6, y: 3 },
+    { t: 120, id: "h_a", x: 0.37, y: 1 },
+    { t: 160, id: "h_complete", x: 0.63, y: 3 },
     {
-        t: 200, id: "h_human", x: 0.85, y: 2,
+        t: 200, id: "h_human", x: 0.82, y: 2,
         accidental: () => natural, scale: 0.03, offset_y: -15, offset_x: -20
     },
 ]
