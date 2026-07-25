@@ -24,7 +24,14 @@
                     <span class="role mono">Pianistin · Dozentin · Pädagogin</span>
                 </div>
                 <div class="head-right">
-                    <nav class="mono" aria-label="Hauptnavigation">
+                    <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <nav class="mono" id="navMenu" aria-label="Hauptnavigation">
                         <a href="#fundament">Fundament</a>
                         <a href="#bereiche">Bereiche</a>
                         <div class="dropdown">
@@ -39,10 +46,10 @@
                         <a href="vita">Vita</a>
                         <a href="#kontakt">Kontakt</a>
                     </nav>
-                    <button class="sound" id="soundBtn" aria-pressed="false"
+                    <!-- <button class="sound" id="soundBtn" aria-pressed="false"
                         title="Goldberg-Aria (Ihre Aufnahme) leise zuschalten">
                         <span class="dot"></span><span id="soundTxt">Klang aus</span>
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -71,10 +78,11 @@
 
             <div id="title-container">
                 <text id="title">
-                    Professionally Decoded Music - <text class="matrix-a">A</text> key to understanding the matrix of
-                    life.
+                    Professionally Decoded Music 
                 </text>
                 <text id="subtitle">
+                    <text class="matrix-a">A</text> key to understanding the matrix of
+                    life.
                 </text>
             </div>
         </div>

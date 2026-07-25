@@ -74,6 +74,24 @@ const step = 3;
 const clef_dx = violin_clef_points[violin_clef_points.length - 20].x - violin_clef_points[0].x;
 const clef_dy = violin_clef_points[violin_clef_points.length - 20].y - violin_clef_points[0].y;
 
+function fadeout(layer, d_alpha) {
+    // layer.loadPixels();
+
+    // for (let i = 3; i < layer.pixels.length; i += 4) {
+    //     layer.pixels[i] = max(0, layer.pixels[i] - d_alpha);
+    // }
+
+    // layer.updatePixels();
+
+    layer.push();
+    layer.resetMatrix();
+
+layer.erase(d_alpha);   // amount to erase
+layer.rect(0, 0, layer.width, layer.height);
+
+layer.noErase();
+layer.pop();
+}
 
 function draw() {
     main_layer.stroke(74, 0, 0, 120);
@@ -100,7 +118,7 @@ function draw() {
         planet_layer.fill(72, 0, 0, 255);
         planet_layer.noStroke();
         planet_layer.ellipse(x, y, 18, 12, Math.PI);
-    } 
+    }
     if (t >= violin_clef_points.length - 20 && angle <= Math.PI * 4.5) {
         const prev_x = radius * Math.cos(angle) + clef_dx;
         const prev_y = radius * Math.sin(angle) + clef_dy - initial_radius;
@@ -108,15 +126,16 @@ function draw() {
         radius += 7 * step / sqrt(radius + 1);
         const x = radius * Math.cos(angle) + clef_dx;
         const y = radius * Math.sin(angle) + clef_dy - initial_radius;
+
+        fadeout(spiral_layer, 10);
         spiral_layer.stroke(72, 0, 0, 255);
         spiral_layer.strokeWeight(4);
-        spiral_layer.background(238, 237, 231, 25);
         spiral_layer.line(prev_x, prev_y, x, y);
-        
+
         planet_layer.fill(72, 0, 0, 255);
         planet_layer.noStroke();
         planet_layer.ellipse(x, y, 18, 12, Math.PI);
-        
+
         BACH.forEach((item) => {
             if (item.painted != true && angle >= item.angle) {
                 const text = document.getElementById(item.id);
@@ -141,8 +160,8 @@ function draw() {
                 item.painted = true;
             }
         })
-    } 
-    if (angle > Math.PI * 4.5){
+    }
+    if (angle > Math.PI * 4.5) {
         spiral_layer.clear();
         planet_layer.clear();
         show('title');
@@ -164,6 +183,6 @@ function draw() {
     })
 }
 
-function show(id, opacity=1) {
+function show(id, opacity = 1) {
     document.getElementById(id).style.opacity = opacity;
 }
