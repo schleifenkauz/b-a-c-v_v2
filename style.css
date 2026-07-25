@@ -58,7 +58,7 @@ html {
 
 .heading .heading-part {
     font-weight: 200;
-    font-size: 30px;
+    font-size: 25px;
     color: var(--oxblood);
     opacity: 0;
     transition: opacity 10s ease;
