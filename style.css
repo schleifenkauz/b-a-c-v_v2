@@ -277,17 +277,18 @@ nav.mono a:hover {
 
 /* Bereiche */
 .areas {
-    transition: opacity 3s ease;
     padding: 0px 0;
 }
 
 .areas .intro {
     margin: 14px 0;
     opacity: 0;
+    transition: opacity 3s ease;
 }
 
 .area {
     opacity: 0;
+    transition: opacity 3s ease;
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: 26px;
