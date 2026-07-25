@@ -71,7 +71,7 @@ html {
 .submenu {
     display: none;
     position: absolute;
-    background-color: var(--paper);
+    background-color: var(--oxblood-light);
     list-style: none;
 }
 
@@ -336,15 +336,11 @@ svg.signet {
 .creed {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    margin-top: 60px;
-    padding: 44px 0
+    padding: 20px 0
 }
 
 .creed .wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center
+    text-align: center;
 }
 
 .creed .big {

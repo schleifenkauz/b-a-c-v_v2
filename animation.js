@@ -99,7 +99,7 @@ function draw() {
             const text = document.getElementById(item.id);
             text.style.left = `${item.x * W - 15}px`;
             text.classList.add("show");
-            main_layer.fill(30);
+            main_layer.fill(0);
             main_layer.noStroke();
             const x = item.x * W;
             const y = H / PHI - item.y * LINE_DISTANCE / 2;
