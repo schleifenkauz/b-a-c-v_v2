@@ -87,9 +87,16 @@ function fadeout(layer, d_alpha) {
 
 let eraser = 10;
 
-const RED = 120;
+function accent(opacity = 255) {
+    return color([74, 144, 164, opacity]);
+    //return color([201, 168, 92, opacity]);
+    const c = color([0, 0, 50, opacity]);
+    // console.log(c);
+    return c;
+}
+
 function draw() {
-    main_layer.stroke(RED, 0, 0, 120);
+    main_layer.stroke(accent(120));
     [main_layer, planet_layer, spiral_layer, line_layer].forEach((layer) => {
         layer.push();
         layer.translate(W / 2, H * 0.5);
@@ -98,7 +105,7 @@ function draw() {
     planet_layer.clear();
     if (t <= 0) {
         const progress = (t + dot_appearance) / dot_appearance;
-        planet_layer.fill(RED, 0, 0, progress * 255);
+        planet_layer.fill(accent(progress * 255));
         planet_layer.noStroke();
         planet_layer.ellipse(0, 0, 18 * progress, 12 * progress, Math.PI);
     } else if (t <= violin_clef_points.length) {
@@ -112,7 +119,7 @@ function draw() {
         }
 
         if (t < violin_clef_points.length - 20) {
-            planet_layer.fill(RED, 0, 0, 255);
+            planet_layer.fill(accent(255));
             planet_layer.noStroke();
             planet_layer.ellipse(x, y, 18, 12, Math.PI);
         }
@@ -127,11 +134,11 @@ function draw() {
 
         const opacity = 1 - max(angle - 3 * Math.PI, 0) / (1.5 * Math.PI); //Worte nacheinander
         fadeout(spiral_layer, 8);
-        spiral_layer.stroke(RED, 0, 0, opacity * 255);
+        spiral_layer.stroke(accent(opacity * 255));
         spiral_layer.strokeWeight(4);
         spiral_layer.line(prev_x, prev_y, x, y);
 
-        planet_layer.fill(RED, 0, 0, opacity * 255);
+        planet_layer.fill(accent(opacity * 255));
         planet_layer.noStroke();
         planet_layer.ellipse(x, y, 18, 12, Math.PI);
 

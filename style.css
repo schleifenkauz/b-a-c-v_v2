@@ -14,8 +14,8 @@
     --paper-2: #E6E4DB;
     --ink: #c6c6c6;
     --ink-2: #c9c9c9;
-    --oxblood: #660000;
-    --oxblood-light: #770000;
+    --oxblood: #4A90A4;
+    --oxblood-light: #266071;
     --line: #C4C1B6;
     --focus: #7C1D2E;
 }
@@ -91,7 +91,8 @@ html {
     padding-bottom: 20px;
     z-index: 5;
     flex-direction: column;
-    font-family: "Cormorant Garamond", serif;
+    font-family: "IBM Plex Mono", monospace;
+    /* font-family: "Cormorant Garamond", serif; */
     color: var(--ink);
 }
 
@@ -102,10 +103,11 @@ html {
 }
 
 #subtitle {
-    font-size: 24px;
+    font-size: 18px;
     opacity: 0;
     transition: opacity 3s ease;
     text-transform: uppercase;
+    /* font-family: "IBM Plex Mono", monospace; */
 }
 
 .submenu {
@@ -533,8 +535,7 @@ footer .sdg {
 .hamburger span {
     width: 36px;
     height: 1px;
-    background-color: var(--oxblood);
-    background-image: "/res/temple.png";
+    background-color: var(--line);
     display: block;
 }
 
