@@ -88,8 +88,8 @@ function fadeout(layer, d_alpha) {
 let eraser = 10;
 
 function accent(opacity = 255) {
-    return color([74, 144, 164, opacity]);
-    //return color([201, 168, 92, opacity]);
+    // return color([74, 144, 164, opacity]);
+    return color([201, 168, 92, opacity]);
     const c = color([0, 0, 50, opacity]);
     // console.log(c);
     return c;

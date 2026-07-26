@@ -9,14 +9,25 @@
     --focus: #7C1D2E;
 } */
 
-:root {
+/* :root {
     --paper: #1c1c1c;
-    --paper-2: #E6E4DB;
+    --paper-2: #323232;
     --ink: #c6c6c6;
     --ink-2: #c9c9c9;
     --oxblood: #4A90A4;
     --oxblood-light: #266071;
     --line: #C4C1B6;
+    --focus: #7C1D2E;
+} */
+
+:root {
+    --paper: #1c1c1c;
+    --paper-2: #323232;
+    --ink: #c6c6c6;
+    --ink-2: #c9c9c9;
+    --oxblood: #C9A85C;
+    --oxblood-light: #c49322;
+    --line: #5a5850;
     --focus: #7C1D2E;
 }
 
@@ -80,7 +91,7 @@ html {
 #heading .heading-part {
     font-weight: 200;
     font-size: 25px;
-    color: var(--oxblood);
+    color: var(--oxblood-light);
     opacity: 0;
     transition: opacity 10s ease;
 }
@@ -103,11 +114,11 @@ html {
 }
 
 #subtitle {
-    font-size: 18px;
+    font-size: 24px;
     opacity: 0;
     transition: opacity 3s ease;
-    text-transform: uppercase;
-        font-family: "IBM Plex Mono", monospace;
+    /* text-transform: uppercase; */
+        /* font-family: "IBM Plex Mono", monospace; */
 
     /* font-family: "IBM Plex Mono", monospace; */
 }
@@ -291,7 +302,7 @@ nav.mono a:hover {
 .quote {
     opacity: 0;
     transition: opacity 3s ease;
-    font-family: "Cormorant Garamond", serif;
+    /* font-family: "Cormorant Garamond", serif; */
     padding: 20px;
     font-weight: 300;
     z-index: 5;
@@ -343,7 +354,7 @@ nav.mono a:hover {
     font-family: "Cormorant Garamond", serif;
     font-size: 46px;
     font-weight: 500;
-    color: var(--oxblood);
+    color: var(--oxblood-light);
     line-height: .9
 }
 
