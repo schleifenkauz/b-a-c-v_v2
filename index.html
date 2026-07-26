@@ -24,7 +24,8 @@
                     <span class="role mono">Pianistin · Dozentin · Pädagogin</span>
                 </div>
                 <div class="head-right">
-                    <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+                    <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen" aria-expanded="false"
+                        aria-controls="navMenu">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -32,8 +33,8 @@
                         <span></span>
                     </button>
                     <nav class="mono" id="navMenu" aria-label="Hauptnavigation">
-                        <a href="#fundament">Fundament</a>
                         <a href="#bereiche">Bereiche</a>
+                        <a href="#vita">Vita</a>
                         <div class="dropdown">
                             <a href="#wegweiser">Wegweiser</a>
                             <ul class="submenu">
@@ -51,7 +52,6 @@
                                 <li><a href="#wegweiser4">Juristen</a></li>
                             </ul>
                         </div>
-                        <a href="#vita">Vita</a>
                         <a href="#kontakt">Kontakt</a>
                     </nav>
                     <button class="sound" id="soundBtn" aria-pressed="false"
@@ -64,30 +64,28 @@
     </header>
 
     <main>
-
         <div class="wrap">
             <div id="bach">
                 <div id="heading">
-                    <div id="h_be">
+                    <div id="h_be" class="hidden">
                         <b>B</b><text class="heading-part">e</text>
                     </div>
-                    <div id="h_a" class="matrix_a">
+                    <div id="h_a" class="matrix_a hidden">
                         <b><em>A</em></b>
                     </div>
-                    <div id="h_complete">
+                    <div id="h_complete" class="hidden">
                         <b>C</b><text class="heading-part">omplete</text>
                     </div>
-                    <div id="h_human">
+                    <div id="h_human" class="hidden">
                         <b>H</b><text class="heading-part">uman</text>
                     </div>
                 </div>
                 <div id="canvas"></div>
             </div>
 
-                    <section class="creed wrap">
+            <section class="creed wrap">
                 <p class="quote">
-                    "Give me <em class="matrix-a">A</em> lever long enough and a solid point, and I
-                    will move the world."
+                    <span>"</span><span>Give</span> <span>me</span> <span><em class="matrix-a">A</em></span> <span>lever</span> <span>long</span> <span>enough</span> <span>and</span> <span>a</span> <span>solid</span> <span>point,</span> <span>and</span> <span>I</span> <span>will</span> <span>move</span> <span>the</span> <span>world.</span><span>"</span><sup><a href="#source-archimedes" class="footnote-ref">1</a></sup>
                 </p>
 
                 <!-- <p class="big">
@@ -102,23 +100,27 @@
                         Podium, Katheder, Unterrichtsraum und Lebensschule sind vier Ableitungen derselben Wurzel.</p>
                     <p>„<em>MUSIC IS IT.</em>“ &nbsp;·&nbsp; „If music be the food of love, play on.“</p>
                 </div> -->
-            
-        </section>
 
-            <div id="title-container">
+            </section>
+
+            <div id="title-container" class="hidden">
                 <text id="title">
-                    Professionally Decoded Music 
+                    Music – Professionally Decoded
+                </text>
+                <text id="equivalence">
+                    ⇔
                 </text>
                 <text id="subtitle">
-                    As a key to understanding the m<em class="matrix-a">A</em>trix of
+                    A key to understanding the m<em class="matrix-a">A</em>trix of
                     life's science.
                 </text>
             </div>
         </div>
-        </div>
+
+
 
         <section class="areas wrap" id="bereiche">
-            <p class="intro mono" id="areas-intro">Ein Fund<em class="matrix-a">A</em>ment, vier Ableitungen</p>
+            <p class="intro mono hidden" id="areas-intro">Ein Fund<em class="matrix-a">A</em>ment, vier Ableitungen</p>
 
             <a class="area" href="#" id="area_fundament">
                 <img src="res/temple-gold.png" width="40px">
@@ -193,7 +195,7 @@
 
             <a class="area" href="#" id="area_human">
                 <span><text class="glyph">H</text><text class="text-rest">uman</text></span>
-                
+
                 <div>
                     <h3>Podium</h3>
                     <span class="who mono">Für Veranstalter</span>
@@ -213,6 +215,28 @@
 
         </section>
 
+        <section class="vita wrap hidden" id="vita">
+            <div class="vita-text">
+                <h2>Vita</h2>
+                <ul>
+                    <li>Studied piano with internationally renowned teachers from the age of 13.</li>
+                    <li>Combined music studies with psychology, philosophy, and interdisciplinary education.</li>
+                    <li>Completed additional training in Design Thinking and negotiation.</li>
+                    <li>Won international piano competitions and performed worldwide.</li>
+                    <li>Taught piano at university level early in her career.</li>
+                    <li>Paused her career for several years due to serious illness.</li>
+                    <li>Returned to teaching and founded an institute for gifted education in 2010.</li>
+                    <li>Created the interdisciplinary <strong>B-A-C-H (Be-A-Complete-Human)</strong> concert lecture
+                        series.</li>
+                    <li>Teaches at the Technical University of Munich (TUM).</li>
+                </ul>
+            </div>
+            <div class="portrait-wrapper">
+                <img src="res/portrait.png" alt="Portrait">
+            </div>
+        </section>
+
+
         <section class="idx wrap" id="wegweiser">
             <p class="mono">Wegweiser</p>
             <div class="cols">
@@ -223,6 +247,10 @@
             </div>
             <p class="note-tag" style="margin-top:22px">▸ Platzhalter: Vita, Stimmen, Portraitfoto und Kontakt folgen
                 auf den Unterseiten.</p>
+        </section>
+
+        <section class="sources wrap" id="sources">
+            <p class="footnote-source" id="source-archimedes"><sup>1</sup> Archimedes — attributed quote, commonly referenced in physics and engineering as the principle of leverage.</p>
         </section>
     </main>
 

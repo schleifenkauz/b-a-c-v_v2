@@ -10,7 +10,7 @@ const heading = document.getElementById("heading");
 let quotes = document.getElementsByClassName("quote");
 const W = par.offsetWidth;
 const H = par.offsetWidth;
-const offsetY = bach.offsetHeight * 0.7 - H / 2;
+const offsetY = bach.offsetHeight * 0.8 - H / 2;
 const scale = W / 600 * 0.5;
 console.log("Canvas size:", W, H, "Scale: ", scale);
 
@@ -26,14 +26,14 @@ function makeCanvas(w, h, z_index) {
 }
 
 function setup() {
-    natural = loadImage("res/natural-gold.png");
-    flat = loadImage("res/flat-gold.png");
+    natural = loadImage("res/natural-light-gold.png");
+    flat = loadImage("res/flat-light-gold.png");
 
     createCanvas(W, H).parent("canvas").position(0, offsetY)
         .style("z-index", 0)
     main_layer = this;
     line_layer = makeCanvas(W, H, -1);
-    spiral_layer = makeCanvas(W, H, -2);
+    spiral_layer = makeCanvas(W, H, 5);
     planet_layer = makeCanvas(W, H, 1);
     clef_layer = makeCanvas(W, H, 0);
     //text_layer.background(255, 255, 255, 150);
@@ -61,7 +61,7 @@ const BACH = [
         angle: Math.PI * 5.12, t: 80, id: "h_be", x: 0.18, y: 2, area_id: "area_be",
         accidental: () => flat, scale: 0.16, offset_y: -44, offset_x: -46
     },
-    { angle: Math.PI * 3.19, t: 120, id: "h_a", x: 0.37, y: 1, area_id: "area_a", color: "#CE8946" }, 
+    { angle: Math.PI * 3.19, t: 120, id: "h_a", x: 0.37, y: 1, area_id: "area_a", color: "#cba241" }, 
     { angle: Math.PI * 3.85, t: 160, id: "h_complete", x: 0.63, y: 3, area_id: "area_complete" },
     {
         angle: Math.PI * 5.932, t: 200, id: "h_human", x: 0.82, y: 2, area_id: "area_human",
@@ -148,9 +148,9 @@ function draw() {
             if (item.painted != true && angle >= item.angle) {
                 const text = document.getElementById(item.id);
                 text.style.left = `${x * scale + W / 2 - 15}px`;
-                text.classList.add("show");
+                show(item.id);
                 if (item.color) { main_layer.stroke(item.color) }
-                else { main_layer.stroke(accent()) };
+                else { main_layer.stroke(accent(172)) };
                 main_layer.strokeWeight(3);
                 main_layer.noFill();
                 const y = -item.y * LINE_DISTANCE / 2;
@@ -178,8 +178,8 @@ function draw() {
         eraser += 1;
         planet_layer.clear();
         angle += 0.2;
-        show('title');
-        show('subtitle');
+        show('title-container');
+        show('vita');
     } else if (angle > Math.PI * 8) {
         spiral_layer.clear();
         main_layer.noLoop();
@@ -205,7 +205,13 @@ function draw() {
     }
 }
 
+let shown = new Set;
+
 function show(id, opacity = 1) {
     const el = document.getElementById(id);
+    if (shown.has(el)) return;
+    console.log(el);
+    el.classList.remove('hidden');
     el.style.opacity = opacity;
+    shown.add(el);
 }
