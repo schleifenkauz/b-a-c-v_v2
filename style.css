@@ -372,7 +372,7 @@ nav.mono a:hover {
     font-size: 0.85em;
     vertical-align: super;
     margin-left: 0.15em;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .sources {
