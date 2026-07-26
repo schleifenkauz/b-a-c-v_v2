@@ -146,10 +146,11 @@ html {
 }
 
 .matrix-a {
-    color: var(--oxblood) !important;
+    color: var(--oxblood-light) !important;
     /* font-style: italic; */
     font-size: calc(1em + 4px);
     font-weight: 1000 !important;
+    font-family: "EB Garamond", serif !important;
 }
 
 body {
