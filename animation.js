@@ -35,8 +35,9 @@ function setup() {
     line_layer = makeCanvas(W, H, -1);
     spiral_layer = makeCanvas(W, H, -2);
     planet_layer = makeCanvas(W, H, 1);
+    clef_layer = makeCanvas(W, H, 0);
     //text_layer.background(255, 255, 255, 150);
-    canvases = [this, line_layer, planet_layer, spiral_layer]
+    canvases = [this, line_layer, planet_layer, spiral_layer, clef_layer]
     /*     mobile = windowWidth < 1200;
     
         const content = document.getElementById("content");
@@ -60,7 +61,7 @@ const BACH = [
         angle: Math.PI * 5.12, t: 80, id: "h_be", x: 0.18, y: 2, area_id: "area_be",
         accidental: () => flat, scale: 0.16, offset_y: -44, offset_x: -46
     },
-    { angle: Math.PI * 3.19, t: 120, id: "h_a", x: 0.37, y: 1, area_id: "area_a", }, 
+    { angle: Math.PI * 3.19, t: 120, id: "h_a", x: 0.37, y: 1, area_id: "area_a", color: "#CE8946" }, 
     { angle: Math.PI * 3.85, t: 160, id: "h_complete", x: 0.63, y: 3, area_id: "area_complete" },
     {
         angle: Math.PI * 5.932, t: 200, id: "h_human", x: 0.82, y: 2, area_id: "area_human",
@@ -97,8 +98,7 @@ function accent(opacity = 255) {
 }
 
 function draw() {
-    main_layer.stroke(accent(120));
-    [main_layer, planet_layer, spiral_layer, line_layer].forEach((layer) => {
+    canvases.forEach((layer) => {
         layer.push();
         layer.translate(W / 2, H * 0.5);
         layer.scale(scale);
@@ -114,8 +114,9 @@ function draw() {
             const dx = (violin_clef_points[j].x - violin_clef_points[j - 1].x);
             const dy = (violin_clef_points[j].y - violin_clef_points[j - 1].y);
             const w = interpolate(thickness, t);
-            main_layer.strokeWeight(w * 1.5);
-            main_layer.line(x, y, x + dx, y + dy);
+            clef_layer.stroke(accent(120));
+            clef_layer.strokeWeight(w * 1.5);
+            clef_layer.line(x, y, x + dx, y + dy);
             x += dx; y += dy;
         }
 
@@ -148,7 +149,8 @@ function draw() {
                 const text = document.getElementById(item.id);
                 text.style.left = `${x * scale + W / 2 - 15}px`;
                 text.classList.add("show");
-                main_layer.stroke(accent());
+                if (item.color) { main_layer.stroke(item.color) }
+                else { main_layer.stroke(accent()) };
                 main_layer.strokeWeight(3);
                 main_layer.noFill();
                 const y = -item.y * LINE_DISTANCE / 2;
@@ -172,6 +174,7 @@ function draw() {
     }
     if (angle > Math.PI * 4.5) {
         fadeout(spiral_layer, eraser);
+        fadeout(clef_layer, 2);
         eraser += 1;
         planet_layer.clear();
         angle += 0.2;
@@ -191,7 +194,7 @@ function draw() {
         }
     }
 
-    [main_layer, planet_layer, spiral_layer, line_layer].forEach((layer) => {
+    canvases.forEach((layer) => {
         layer.pop();
     })
 
