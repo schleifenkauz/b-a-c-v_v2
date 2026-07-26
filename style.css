@@ -1,10 +1,21 @@
-:root {
+/* :root {
     --paper: #EEEDE7;
     --paper-2: #E6E4DB;
     --ink: #1A1A22;
     --ink-2: #54525C;
     --oxblood: #7C1D2E;
     --oxblood-light: color-mix(in srgb, var(--oxblood) 85%, white 15%);
+    --line: #C4C1B6;
+    --focus: #7C1D2E;
+} */
+
+:root {
+    --paper: #1c1c1c;
+    --paper-2: #E6E4DB;
+    --ink: #c6c6c6;
+    --ink-2: #c9c9c9;
+    --oxblood: #660000;
+    --oxblood-light: #770000;
     --line: #C4C1B6;
     --focus: #7C1D2E;
 }
