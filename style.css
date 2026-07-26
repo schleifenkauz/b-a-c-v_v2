@@ -362,17 +362,12 @@ nav.mono a:hover {
     line-height: 1.28
 }
 
-.quote span {
-    /* opacity: 0; */
-}
-
 .quote .footnote-ref {
     text-decoration: none;
     color: inherit;
     font-size: 0.85em;
     vertical-align: super;
     margin-left: 0.15em;
-    /* opacity: 0; */
 }
 
 .sources {

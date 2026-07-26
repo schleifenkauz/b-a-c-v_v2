@@ -97,6 +97,8 @@ function accent(opacity = 255) {
     return c;
 }
 
+const quote = quotes[0];
+
 function draw() {
     canvases.forEach((layer) => {
         layer.push();
@@ -127,6 +129,12 @@ function draw() {
         }
     }
     if (t >= violin_clef_points.length - 20 && angle <= Math.PI * 4.5) {
+        const n = (angle - (Math.PI / 2)) / (Math.PI * 4) * quote.children.length;
+        console.log(n);
+        for (let j = 0; j < n && j < quote.children.length; j++) {
+            quote.children[j].classList.remove('hidden');
+        }
+
         const prev_x = radius * Math.cos(angle) + clef_dx;
         const prev_y = radius * Math.sin(angle) + clef_dy - initial_radius;
         angle += 0.2 * step / sqrt(radius + 1);
@@ -180,6 +188,7 @@ function draw() {
         angle += 0.2;
         show('title-container');
         show('vita');
+        header.style.zIndex = 5;
     } else if (angle > Math.PI * 8) {
         spiral_layer.clear();
         main_layer.noLoop();
