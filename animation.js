@@ -85,6 +85,8 @@ function fadeout(layer, d_alpha) {
     layer.pop();
 }
 
+let eraser = 10;
+
 function draw() {
     main_layer.stroke(74, 0, 0, 120);
     [main_layer, planet_layer, spiral_layer, line_layer].forEach((layer) => {
@@ -122,7 +124,7 @@ function draw() {
         const x = radius * Math.cos(angle) + clef_dx;
         const y = radius * Math.sin(angle) + clef_dy - initial_radius;
 
-        fadeout(spiral_layer, 10);
+        fadeout(spiral_layer, 8);
         spiral_layer.stroke(72, 0, 0, 255);
         spiral_layer.strokeWeight(4);
         spiral_layer.line(prev_x, prev_y, x, y);
@@ -158,10 +160,14 @@ function draw() {
         })
     }
     if (angle > Math.PI * 4.5) {
-        spiral_layer.clear();
+        fadeout(spiral_layer, eraser);
+         eraser += 1;
         planet_layer.clear();
+        angle += 0.2;
         show('title');
         show('subtitle');
+    } else if (angle > Math.PI * 8) {
+        spiral_layer.clear();
         main_layer.noLoop();
     }
     t += step;
@@ -186,5 +192,6 @@ function draw() {
 }
 
 function show(id, opacity = 1) {
-    document.getElementById(id).style.opacity = opacity;
+    const el = document.getElementById(id);
+    el.style.opacity = opacity;
 }
