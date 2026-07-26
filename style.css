@@ -85,15 +85,16 @@ html {
 }
 
 #title {
-    font-size: 32px;
+    font-size: 48px;
     opacity: 0;
     transition: opacity 3s ease;
 }
 
 #subtitle {
-    font-size: 28px;
+    font-size: 24px;
     opacity: 0;
     transition: opacity 3s ease;
+    text-transform: uppercase;
 }
 
 .submenu {
@@ -280,7 +281,7 @@ nav.mono a:hover {
     font-weight: 300;
     z-index: 5;
     /* font-style: italic; */
-    font-size: clamp(24px, 3.1vw, 34px);
+    font-size: 24px;
     line-height: 1.28
 }
 

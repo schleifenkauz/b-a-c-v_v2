@@ -50,7 +50,7 @@ function setup() {
 }
 
 const initial_radius = 60;
-const dot_appearance = 300;
+const dot_appearance = 500;
 let t = -dot_appearance, x = 0, y = 0, spiral_x, spiral_y, radius = initial_radius, angle = Math.PI / 2;
 
 const PHI = (1 + Math.sqrt(5)) / 2;
@@ -124,12 +124,13 @@ function draw() {
         const x = radius * Math.cos(angle) + clef_dx;
         const y = radius * Math.sin(angle) + clef_dy - initial_radius;
 
+        const opacity = 1 - max(angle - 3 * Math.PI, 0) / (1.5 * Math.PI); //Worte nacheinander
         fadeout(spiral_layer, 8);
-        spiral_layer.stroke(72, 0, 0, 255);
+        spiral_layer.stroke(72, 0, 0, opacity * 255);
         spiral_layer.strokeWeight(4);
         spiral_layer.line(prev_x, prev_y, x, y);
 
-        planet_layer.fill(72, 0, 0, 255);
+        planet_layer.fill(72, 0, 0, opacity * 255);
         planet_layer.noStroke();
         planet_layer.ellipse(x, y, 18, 12, Math.PI);
 
