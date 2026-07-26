@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundament — Cornelia Sonnek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#EEEDE7;--paper-2:#E6E4DB;--ink:#1A1A22;--ink-2:#54525C;--oxblood:#7C1D2E;--line:#C4C1B6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"EB Garamond",Georgia,serif;
+    font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--oxblood);color:var(--paper)}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--oxblood);outline-offset:3px}
+  .wrap{max-width:840px;margin:0 auto;padding:0 40px}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
+
+  header{padding:30px 0 0}
+  .topbar{max-width:1120px;margin:0 auto;padding:0 40px 18px;display:flex;justify-content:space-between;
+    align-items:baseline;border-bottom:1px solid var(--line);gap:20px;flex-wrap:wrap}
+  .brand .name{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.22em;text-transform:uppercase}
+  .brand .role{display:block;margin-top:4px}
+  .back{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+  .back:hover{color:var(--oxblood);border-color:var(--oxblood)}
+
+  .lede-sec{padding:76px 0 20px;text-align:center}
+  .lede-sec .kicker{margin-bottom:22px}
+  h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(52px,10vw,104px);line-height:.95;letter-spacing:-.01em}
+  .sub{margin-top:20px;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:300;
+    font-size:clamp(22px,3vw,30px);color:var(--ink-2)}
+
+  .epigraphs{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin:64px 0;
+    padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .epi{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;
+    font-size:clamp(20px,2.4vw,26px);line-height:1.3}
+  .epi cite{display:block;margin-top:12px;font-style:normal;font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+
+  .prose p{margin-top:24px;font-size:20px}
+  .prose p:first-child{margin-top:0}
+  .prose em{color:var(--oxblood);font-style:italic}
+
+  .lineage{margin:64px 0}
+  .lineage .head{margin-bottom:8px}
+  .ref{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:baseline;
+    padding:22px 0;border-top:1px solid var(--line)}
+  .ref .name{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:400;line-height:1.05}
+  .ref .name small{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);margin-top:6px}
+  .ref .txt{color:var(--ink-2);font-size:18px;max-width:56ch}
+  .ref .txt em{color:var(--ink);font-style:italic}
+
+  .berufung{margin:64px 0;padding:44px;background:var(--paper-2);border:1px solid var(--line)}
+  .berufung .verse{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:300;
+    font-size:clamp(22px,3vw,30px);line-height:1.32}
+  .berufung p{margin-top:22px;color:var(--ink-2);max-width:60ch}
+  .berufung p em{color:var(--ink);font-style:italic}
+  .berufung .sdg{margin-top:22px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--oxblood)}
+
+  .voice-line{margin:56px 0;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:300;
+    font-size:clamp(21px,2.7vw,28px);line-height:1.35;max-width:44ch}
+  .opt{color:var(--oxblood);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em}
+
+  footer{border-top:1px solid var(--line);padding:50px 0 66px;margin-top:40px}
+  footer .sdg{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--oxblood)}
+
+  .sdg-fixed{position:fixed;left:20px;bottom:18px;font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.24em;color:var(--ink-2);background:rgba(238,237,231,.72);-webkit-backdrop-filter:blur(4px);
+    backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:30px;padding:6px 11px;cursor:help;text-decoration:none;transition:.2s}
+  .sdg-fixed:hover{color:var(--oxblood);border-color:var(--oxblood)}
+
+  @media (max-width:820px){
+    body{font-size:18px}.wrap{padding:0 22px}
+    .epigraphs{grid-template-columns:1fr;gap:24px}
+    .ref{grid-template-columns:1fr;gap:8px}
+    .berufung{padding:28px}
+    .sdg-fixed{left:14px;bottom:12px;font-size:9px;padding:5px 9px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <span class="name">Cornelia Sonnek</span>
+      <span class="role mono">Pianistin · Dozentin · Philosophin</span>
+    </div>
+    <a class="back" href="#">← Zurück</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="lede-sec">
+    <p class="kicker mono">Das Fundament — Ästhetik</p>
+    <h1>Der eine Grund</h1>
+    <p class="sub">Ästhetik ist kein Teilgebiet, sondern der Grund selbst.</p>
+  </section>
+
+  <section class="epigraphs">
+    <p class="epi">„Die Musik ist die Melodie, zu der die Welt der Text ist.“<cite>Arthur Schopenhauer</cite></p>
+    <p class="epi">„Ethik und Ästhetik sind Eins.“<cite>Ludwig Wittgenstein · Tractatus 6.421</cite></p>
+  </section>
+
+  <section class="prose">
+    <p>Ästhetik ist für mich kein Fach unter Fächern, sondern der Ort, an dem Musik, Mathematik, Ethik und Metaphysik zu <em>einer</em> Frage werden. Von hier aus schließt sich jede andere Frage auf — nicht Musik, erklärt durch anderes, sondern alles andere, aufgeschlossen durch Musik.</p>
+    <p>Ich denke aus einer Ahnenreihe, die diesen einen Grund freigelegt hat. Sechs Stimmen, unabhängig geführt — und doch ein Satz.</p>
+  </section>
+
+  <section class="lineage">
+    <p class="head mono">Bezugspunkte</p>
+
+    <div class="ref">
+      <div class="name">Schopenhauer<small>Metaphysik der Musik</small></div>
+      <div class="txt">Bei ihm ist Musik kein Abbild von Ideen, sondern <em>unmittelbares Abbild des Willens</em> — des metaphysischen Grundes selbst. Darum ist sie Wurzel und nicht Illustration.</div>
+    </div>
+
+    <div class="ref">
+      <div class="name">Wittgenstein<small>Grenze der Sprache</small></div>
+      <div class="txt">Er lehrt zweierlei: dass Ethik und Ästhetik eins sind — und dass das Wesentliche sich nicht sagen, sondern nur <em>zeigen</em> lässt. Musik zeigt, wovor die Sprache verstummt.</div>
+    </div>
+
+    <div class="ref">
+      <div class="name">Adorno<small>Die notwendige Gegenstimme</small></div>
+      <div class="txt">Er misstraut jeder vorschnellen Versöhnung. Ihn auszuhalten bewahrt das Denken vor der schönen Lüge — so, wie Bachs Kontrapunkt die <em>unabhängige Gegenstimme</em> braucht, um wahr zu sein.</div>
+    </div>
+
+    <div class="ref">
+      <div class="name">Eggebrecht<small>Musik als Tonsprache</small></div>
+      <div class="txt">Er zeigt Musik als etwas, das <em>Bedeutung trägt</em> und nicht bloß schmückt — die musikwissenschaftliche Deckung dafür, Inhalte durch Musik aufzuschließen.</div>
+    </div>
+
+    <div class="ref">
+      <div class="name">du Sautoy<small>Musik = Mathematik</small></div>
+      <div class="txt">Bei ihm fallen Musik und Mathematik in eins — und er ist zugleich das Vorbild, strengste Wissenschaft <em>verständlich und schön</em> zu vermitteln.</div>
+    </div>
+
+    <div class="ref">
+      <div class="name">Hofstadter<small>Gödel · Escher · Bach — Metamagicum</small></div>
+      <div class="txt">Er verknüpft Gödel, Escher und Bach zu einer Einsicht: aus <em>Selbstbezug und Selbstähnlichkeit</em> erwächst Geist. Bachs Kanon ist das Modell dafür, wie sich das Ganze in jedem Teil wiederholt.</div>
+    </div>
+  </section>
+
+  <section class="berufung">
+    <p class="verse">„Die Frucht des Geistes aber ist Liebe, Freude, Friede, Geduld, Freundlichkeit, Güte, Treue, Sanftmut und Selbstbeherrschung.“</p>
+    <p>Es gibt keine Vorlesung, kein Konzert, keine Unterrichts- oder Therapiestunde von mir, in der das nicht zum Tragen käme. Ich verstehe meine Arbeit als Berufung und als <em>Dienst</em> — bezogen auf eine Ordnung, die ich nicht erfunden habe und der ich in Dankbarkeit und Demut zu dienen versuche.</p>
+    <p class="sdg">Soli Deo Gloria</p>
+  </section>
+
+  <p class="voice-line">Ich spreche bewusst als Frau — nicht gegen den Mann und nicht unter ihm, sondern aus einer eigenen, versöhnenden Sicht, die die Kluft schließen will statt sie zu vertiefen.
+    <br><span class="opt">▸ optional — Wortlaut noch abzustimmen</span>
+  </p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mono">Cornelia Sonnek · München</p>
+    <p class="sdg" style="margin-top:10px">Soli Deo Gloria</p>
+  </div>
+</footer>
+
+<a class="sdg-fixed" href="#" title="Soli Deo Gloria — in der Tradition J. S. Bachs">S · D · G</a>
+</body>
+</html>

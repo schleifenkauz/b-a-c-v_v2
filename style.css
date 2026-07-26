@@ -387,6 +387,11 @@ nav.mono a:hover {
     transition: opacity 3s ease;
 }
 
+.quote span.hidden {
+    opacity: 0;
+    transition: opacity 3s ease;    
+}
+
 /* Bereiche */
 .areas {
     padding: 0px 0;

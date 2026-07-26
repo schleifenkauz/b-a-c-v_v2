@@ -130,8 +130,8 @@ function draw() {
     }
     if (t >= violin_clef_points.length - 20 && angle <= Math.PI * 4.5) {
         const n = (angle - (Math.PI / 2)) / (Math.PI * 4) * quote.children.length;
-        console.log(n);
         for (let j = 0; j < n && j < quote.children.length; j++) {
+            quote.children[j].style.transition = `opacity 1s ease`;
             quote.children[j].classList.remove('hidden');
         }
 
