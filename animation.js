@@ -26,8 +26,8 @@ function makeCanvas(w, h, z_index) {
 }
 
 function setup() {
-    natural = loadImage("res/natural.png");
-    flat = loadImage("res/flat.png");
+    natural = loadImage("res/natural-gold.png");
+    flat = loadImage("res/flat-gold.png");
 
     createCanvas(W, H).parent("canvas").position(0, offsetY)
         .style("z-index", 0)
@@ -89,7 +89,7 @@ let eraser = 10;
 
 function accent(opacity = 255) {
     // return color([74, 144, 164, opacity]);
-    return color([206, 137, 70, opacity]);
+    //return color([206, 137, 70, opacity]);
     return color([201, 168, 92, opacity]);
     const c = color([0, 0, 50, opacity]);
     // console.log(c);
