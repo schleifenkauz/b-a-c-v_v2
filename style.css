@@ -168,8 +168,6 @@ html {
     margin-top: 10px;
     font-size: 24px;
     /* text-transform: uppercase; */
-        /* font-family: "IBM Plex Mono", monospace; */
-
     /* font-family: "IBM Plex Mono", monospace; */
 }
 
@@ -340,12 +338,15 @@ nav.mono a:hover {
     background: var(--oxblood)
 }
 
-/* Fundament-Leitband */
 .creed {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     padding: 20px 0;
     z-index: 5;
+}
+
+.creed.hidden {
+    border-width: 0px;
 }
 
 .creed.wrap {
@@ -354,7 +355,7 @@ nav.mono a:hover {
 
 .quote {
     /* font-family: "Cormorant Garamond", serif; */
-    padding: 20px;
+    padding: 10px 0px;
     font-weight: 300;
     z-index: 5;
     /* font-style: italic; */
@@ -716,5 +717,9 @@ footer .sdg {
 
     #soundBtn {
         display: none;
+    }
+
+    .quote {
+        font-size: 20px;
     }
 }
