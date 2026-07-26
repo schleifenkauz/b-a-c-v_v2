@@ -197,9 +197,10 @@ function draw() {
     t += step;
 
     if (t > 0 && t <= 500) {
-        line_layer.strokeWeight(1.5);
-        line_layer.stroke(150, 150, 150, 2);
+        line_layer.clear();
         for (let j = -3; j < 2; j++) {
+            line_layer.strokeWeight(2);
+            line_layer.stroke(150, 150, 150, t / 2);
             line_layer.line(-W / scale, j * LINE_DISTANCE, W / scale, j * LINE_DISTANCE);
         }
     }
