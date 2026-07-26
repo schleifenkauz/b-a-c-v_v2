@@ -32,10 +32,19 @@
                         <span></span>
                     </button>
                     <nav class="mono" id="navMenu" aria-label="Hauptnavigation">
-                        <a href="#bereiche">Bereiche</a>
+                        <div class="dropdown" id="bereiche">
+                            <a href="#bereiche">Bereiche</a>
+                            <ul class="submenu">
+                                <li><a href="#lebenschule">&nbsp&nbsp&nbsp f(x)=<text class="glyph">B</text>e: Lebensschule</a></li>
+                                <li><a href="#lehre">&nbsp&nbsp f'(x)=<em class="glyph matrix-a">A</em>: Akademische Lehre</a></li>
+                                <li><a href="#instrument-pädagogik">&nbspf''(x)=<text class="glyph">C</text>omplete: Instrument & Pädagogik</a></li>
+                                <li><a href="#podium">f'''(x)=<text class="glyph">H</text>uman: Podium</a></li>
+                            </ul>
+                        </div>
+
                         <a href="#vita">Vita</a>
                         <a href="#vita">Stimmen</a>
-                        <div class="dropdown">
+                        <div class="dropdown" id="wegweiser">
                             <a href="#wegweiser">Wegweiser</a>
                             <ul class="submenu">
                                 <li><a href="#wegweiser1">Konzertveranstalter</a></li>
@@ -152,7 +161,8 @@
                     <h3>Lebensschule</h3>
                     <span class="who mono">Schule · Coaching · Musikergesundheit</span>
                     <p class="lead">Neuropsychologische Grundlagen für Schüler, Lehrer und Eltern; Trauma und Musik;
-                        Führung aus dienendem Prinzip. Erwerben der <em>primus inter pares</em> Führungskompetenz (Servant Leadership).</p>
+                        Führung aus dienendem Prinzip. Erwerben der <em>primus inter pares</em> Führungskompetenz
+                        (Servant Leadership).</p>
                     <div class="subs">
                         <ul>
                             <li>CLUB — Come Listen Understand Be!</li>
@@ -169,9 +179,10 @@
                 <div>
                     <h3>Akademische Lehre</h3>
                     <span class="who mono">Universität &amp; Hochschule</span>
-                    <p class="lead">Interdisziplinäre Vorlesungen und Seminare. 
+                    <p class="lead">Interdisziplinäre Vorlesungen und Seminare.
                         <!-- , in denen klassische Musik als Navigationssystem für Forschung und Lehre dient. -->
-                    Klassische Musik als methodisch-didaktisches Mittel in der Vermittlung naturwissenschaftlicher und geisteswissenschaftlicher Inhalte. 
+                        Klassische Musik als methodisch-didaktisches Mittel in der Vermittlung naturwissenschaftlicher
+                        und geisteswissenschaftlicher Inhalte.
                     </p>
                     <div class="subs">
                         <ul>
@@ -190,8 +201,9 @@
                 <div>
                     <h3>Instrument & Pädagogik</h3>
                     <span class="who mono">Schule & Elternhaus, Schüler & Lehrer</span>
-                    <p class="lead">Klavierunterricht auf höchstem technischem und künstlerischem Niveau — 
-                        das Instrument als Bildung des ganzen Menschen. Neuropsychologisch fundierte Förderung aller Hochbegabungsarten — <b>durch</b> Klavierspiel und Musik.</p>
+                    <p class="lead">Klavierunterricht auf höchstem technischem und künstlerischem Niveau —
+                        das Instrument als Bildung des ganzen Menschen. Neuropsychologisch fundierte Förderung aller
+                        Hochbegabungsarten — <b>durch</b> Klavierspiel und Musik.</p>
                     <div class="subs">
                         <ul>
                             <li>Klavier</li>
@@ -209,7 +221,8 @@
                     <h3>Podium</h3>
                     <span class="who mono">Für Veranstalter</span>
                     <p class="lead">
-                        Konzertvorträge, in denen ein außermusikalischer Inhalt integral durch Musik aufgeschlüsselt wird — als möglicher Tipping Point.
+                        Konzertvorträge, in denen ein außermusikalischer Inhalt integral durch Musik aufgeschlüsselt
+                        wird — als möglicher Tipping Point.
                     </p>
                     <div class="subs">
                         <ul>
@@ -277,9 +290,16 @@
                 <p class="sdg">Soli Deo Gloria</p>
             </div>
             <div>
-                <p class="mono" style="color:var(--oxblood)">[ Kontakt-Platzhalter ]</p>
+                <p class="mono" style="color:var(--oxblood)"><a href="mailto:info@cornelia-sonnek.de">Kontakt</a></p>
                 <p class="mono" style="margin-top:8px">info@cornelia-sonnek.de</p>
             </div>
+        </div>
+        <div class="wrap footer-legal">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="wrap footer-credits">
+            <p class="mono">Website by Nikolaus Knop</p>
         </div>
     </footer>
 
