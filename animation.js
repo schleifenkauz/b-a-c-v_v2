@@ -89,6 +89,7 @@ let eraser = 10;
 
 function accent(opacity = 255) {
     // return color([74, 144, 164, opacity]);
+    return color([206, 137, 70, opacity]);
     return color([201, 168, 92, opacity]);
     const c = color([0, 0, 50, opacity]);
     // console.log(c);
@@ -147,8 +148,9 @@ function draw() {
                 const text = document.getElementById(item.id);
                 text.style.left = `${x * scale + W / 2 - 15}px`;
                 text.classList.add("show");
-                main_layer.fill(0);
-                main_layer.noStroke();
+                main_layer.stroke(accent());
+                main_layer.strokeWeight(3);
+                main_layer.noFill();
                 const y = -item.y * LINE_DISTANCE / 2;
                 console.log(x, y);
                 main_layer.ellipse(x, y, 30, 24, Math.PI);
@@ -170,7 +172,7 @@ function draw() {
     }
     if (angle > Math.PI * 4.5) {
         fadeout(spiral_layer, eraser);
-         eraser += 1;
+        eraser += 1;
         planet_layer.clear();
         angle += 0.2;
         show('title');
