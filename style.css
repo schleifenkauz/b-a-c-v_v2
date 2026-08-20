@@ -769,4 +769,8 @@ footer .sdg {
     .quote {
         font-size: 20px;
     }
+
+    header {
+        padding-top: 4px;
+    }
 }
