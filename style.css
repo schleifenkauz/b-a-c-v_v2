@@ -629,11 +629,11 @@ footer .sdg {
     }
 
     #heading b {
-        font-size: 26px;
+        font-size: 30px;
     }
 
     #heading .heading-part {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .subs {
@@ -771,6 +771,6 @@ footer .sdg {
     }
 
     header {
-        padding-top: 4px;
+        padding-top: 0px;
     }
 }
