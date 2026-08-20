@@ -775,10 +775,10 @@ footer .sdg {
     }
 
     #heading {
-        height: 30px;
+        /* height: 30px; */
     }
 
     #heading div {
-        translate: 0px -15px;
+        translate: 0px -20px;
     }
 }
