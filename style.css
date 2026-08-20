@@ -60,7 +60,7 @@ html {
 
 #heading {
     position: relative;
-    height: 60px;
+    height: 50px;
     width: 100%;
     font-size: 46px;
     /* background-color: rgba(0, 255, 0, 0.1); */
@@ -768,5 +768,17 @@ footer .sdg {
 
     .quote {
         font-size: 20px;
+    }
+
+    header {
+        padding-top: 12px;
+    }
+
+    #heading {
+        height: 30px;
+    }
+
+    #heading div {
+        translate: 0px -15px;
     }
 }
