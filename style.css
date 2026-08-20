@@ -60,7 +60,7 @@ html {
 
 #heading {
     position: relative;
-    height: 50px;
+    height: 70px;
     width: 100%;
     font-size: 46px;
     /* background-color: rgba(0, 255, 0, 0.1); */
@@ -629,11 +629,11 @@ footer .sdg {
     }
 
     #heading b {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     #heading .heading-part {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .subs {

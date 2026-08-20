@@ -1,6 +1,6 @@
 const head =  document.getElementById('head');
 console.log(header.offsetHeight);
-document.getElementById('bach').style.paddingTop = `${header.offsetHeight - 20}px`
+document.getElementById('bach').style.paddingTop = `${header.offsetHeight}px`
 
 const btn = document.getElementById('soundBtn'), txt = document.getElementById('soundTxt'), aria = document.getElementById('aria');
 let on = false;
